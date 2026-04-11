@@ -46,25 +46,28 @@ const features = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-20 bg-primary text-white overflow-hidden relative">
+    <section className="py-16 md:py-20 bg-primary text-white overflow-hidden relative">
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/10 rounded-full -mr-32 -mt-32"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full -ml-48 -mb-48"></div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Why Choose Sheedh?</h2>
-          <div className="w-20 h-1 bg-secondary mx-auto"></div>
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center mb-12 md:mb-16">
+           <div className="inline-block px-4 py-1 bg-secondary/20 rounded-full text-secondary font-bold text-xs mb-4 uppercase tracking-widest">
+            The Difference
+          </div>
+          <h2 className="text-3xl md:text-5xl font-black text-white mb-6">Why Choose Sheedh?</h2>
+          <div className="w-20 h-1.5 bg-secondary mx-auto rounded-full"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {features.map((feature) => (
-            <div key={feature.id} className="p-8 bg-white/5 rounded-2xl backdrop-blur-sm border border-white/10 hover:bg-white/10 hover:translate-y-[-5px] transition-all duration-300">
-              <div className="bg-white p-3 rounded-2xl w-max mb-6">
+            <div key={feature.id} className="p-8 bg-white/5 rounded-3xl backdrop-blur-sm border border-white/10 hover:bg-white/10 hover:translate-y-[-5px] transition-all duration-300 group">
+              <div className="bg-white p-3 rounded-2xl w-max mb-6 group-hover:scale-110 transition-transform">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
-              <p className="text-white/70 leading-relaxed text-sm">{feature.desc}</p>
+              <h3 className="text-xl font-black mb-4 tracking-tight">{feature.title}</h3>
+              <p className="text-white/70 leading-relaxed text-sm font-medium">{feature.desc}</p>
             </div>
           ))}
         </div>

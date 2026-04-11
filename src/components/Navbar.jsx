@@ -54,16 +54,33 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden absolute top-[calc(100%+0.5rem)] left-0 w-full bg-white/95 backdrop-blur-lg transition-all duration-300 rounded-3xl ${isMobileMenuOpen ? 'max-h-[80vh] py-8 shadow-2xl border border-gray-200 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
-        <div className="flex flex-col items-center gap-8 px-4">
-          <Link href="/#home" onClick={() => setIsMobileMenuOpen(false)} className="text-secondary text-xl font-bold">Home</Link>
-          <Link href="/#about" onClick={() => setIsMobileMenuOpen(false)} className="text-secondary text-xl font-bold">About</Link>
-          <Link href="/packages" onClick={() => setIsMobileMenuOpen(false)} className="text-secondary text-xl font-bold">Tour Packages</Link>
-          <Link href="/#vehicles" onClick={() => setIsMobileMenuOpen(false)} className="text-secondary text-xl font-bold">Vehicles</Link>
-          <Link href="/#contact" onClick={() => setIsMobileMenuOpen(false)} className="text-secondary text-xl font-bold">Contact</Link>
-          <button className="w-full bg-primary text-white py-4 rounded-xl font-bold shadow-xl">
-            Book Now
+      <div className={`md:hidden fixed inset-x-0 top-0 h-screen bg-primary/95 backdrop-blur-2xl transition-all duration-500 z-[60] flex flex-col items-center justify-center ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}>
+        <button 
+          className="absolute top-8 right-8 text-white p-2 hover:bg-white/10 rounded-full transition-colors"
+          onClick={() => setIsMobileMenuOpen(false)}
+        >
+          <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <div className="flex flex-col items-center gap-10 px-6 w-full max-w-sm">
+          <Link href="/#home" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-3xl font-black hover:text-secondary transition-colors tracking-tight">Home</Link>
+          <Link href="/#about" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-3xl font-black hover:text-secondary transition-colors tracking-tight">About</Link>
+          <Link href="/packages" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-3xl font-black hover:text-secondary transition-colors tracking-tight">Tour Packages</Link>
+          <Link href="/#vehicles" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-3xl font-black hover:text-secondary transition-colors tracking-tight">Vehicles</Link>
+          <Link href="/#contact" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-3xl font-black hover:text-secondary transition-colors tracking-tight">Contact</Link>
+          
+          <button className="w-full mt-4 bg-secondary text-white py-5 rounded-2xl font-black text-xl shadow-2xl shadow-red-500/30 hover:scale-105 active:scale-95 transition-all">
+            Book Your Journey
           </button>
+          
+          <div className="mt-12 flex gap-6">
+             <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+                <div className="w-2 h-2 bg-secondary rounded-full animate-pulse"></div>
+             </div>
+             <p className="text-white/50 font-bold uppercase tracking-widest text-xs self-center">Premium Sri Lankan Tours</p>
+          </div>
         </div>
       </div>
     </nav>

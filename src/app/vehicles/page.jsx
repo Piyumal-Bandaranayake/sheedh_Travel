@@ -15,7 +15,7 @@ const AllVehiclesPage = () => {
       <Navbar />
       
       {/* Header section with background */}
-      <section className="relative h-[40vh] flex items-center justify-center bg-primary">
+      <section className="relative h-[30vh] md:h-[40vh] flex items-center justify-center bg-primary">
         <div className="absolute inset-0 overflow-hidden">
           <img 
             src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
@@ -23,51 +23,51 @@ const AllVehiclesPage = () => {
             alt="Vehicles background"
           />
         </div>
-        <div className="relative text-center text-white px-4">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">Our Premium Fleet</h1>
-          <p className="text-xl opacity-90">Comfortable and reliable transport for your journey</p>
+        <div className="relative text-center text-white px-6">
+          <h1 className="text-3xl md:text-6xl font-bold mb-4 tracking-tight">Our Premium Fleet</h1>
+          <p className="text-lg md:text-xl opacity-90 max-w-lg mx-auto">Comfortable and reliable transport for your journey</p>
         </div>
       </section>
 
       {/* Vehicles Grid */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <section className="py-12 md:py-20">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
             {vehicles.map((vehicle) => (
-              <div key={vehicle.id} className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
+              <div key={vehicle.id} className="group bg-white rounded-2xl md:rounded-[2rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
                 <div className="relative h-64 overflow-hidden">
                   <img 
                     src={vehicle.image} 
                     alt={vehicle.name} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-1 rounded-full text-primary font-bold text-sm shadow-sm">
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full text-primary font-bold text-xs shadow-sm">
                     {vehicle.type}
                   </div>
                 </div>
 
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-primary mb-4 group-hover:text-secondary transition-colors">{vehicle.name}</h3>
+                <div className="p-6 md:p-8">
+                  <h3 className="text-xl md:text-2xl font-bold text-primary mb-4 group-hover:text-secondary transition-colors">{vehicle.name}</h3>
                   
                   <div className="flex items-center gap-6 mb-6 text-dark-gray border-b border-gray-100 pb-6">
                     <div className="flex items-center gap-2">
                       <svg className="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                       </svg>
-                      <span className="font-medium text-sm">{vehicle.passengers} Seats</span>
+                      <span className="font-bold text-xs md:text-sm">{vehicle.passengers} Seats</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <svg className="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
                       </svg>
-                      <span className="font-medium text-sm">{vehicle.bags} Bags</span>
+                      <span className="font-bold text-xs md:text-sm">{vehicle.bags} Bags</span>
                     </div>
                   </div>
 
                   <div className="flex items-center justify-between">
-                    <span className="text-primary font-bold">{vehicle.price}</span>
-                    <button className="bg-primary text-white p-3 rounded-xl hover:bg-secondary transition-all hover:scale-110 shadow-md">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <span className="text-primary font-black text-lg md:text-xl">{vehicle.price}</span>
+                    <button className="bg-primary text-white p-3 md:p-4 rounded-xl hover:bg-secondary transition-all hover:scale-110 shadow-lg active:scale-95">
+                      <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
                     </button>

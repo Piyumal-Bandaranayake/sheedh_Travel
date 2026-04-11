@@ -35,21 +35,21 @@ const Hero = () => {
       ))}
 
       {/* Content */}
-      <div className="container mx-auto px-6 md:px-12 relative z-10 w-full pt-20">
+      <div className="container mx-auto px-6 md:px-12 relative z-10 w-full pt-28 md:pt-20">
         <div className="max-w-4xl text-left animate-in fade-in slide-in-from-left duration-1000">
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 text-white leading-[1.1] text-glow-white tracking-tight font-noto">
-            Explore Sri Lanka <br/> 
+          <h1 className="text-4xl md:text-7xl lg:text-8xl font-black mb-6 md:mb-8 text-white leading-[1.2] md:leading-[1.1] text-glow-white tracking-tight font-noto">
+            Explore Sri Lanka <br className="hidden md:block"/> 
             <span className="text-secondary italic text-glow-secondary">Sheedh</span> Tours
           </h1>
-          <p className="text-lg md:text-2xl mb-12 text-white/90 max-w-2xl drop-shadow-lg font-medium leading-relaxed">
+          <p className="text-base md:text-2xl mb-8 md:mb-12 text-white/90 max-w-2xl drop-shadow-lg font-medium leading-relaxed">
             Experience the wonder of the pearl of the Indian Ocean with our premium local travel expertise and personalized packages.
           </p>
-          <div className="flex flex-wrap gap-5">
-            <button className="bg-secondary text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-red-700 transition-all duration-300 shadow-xl shadow-red-500/20 active:scale-95">
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-5">
+            <button className="bg-secondary text-white px-8 md:px-10 py-4 md:py-5 rounded-xl md:rounded-2xl font-bold text-base md:text-lg hover:bg-red-700 transition-all duration-300 shadow-xl shadow-red-500/20 active:scale-95">
               View Tour Packages
             </button>
-            <button className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white hover:text-primary transition-all duration-500 active:scale-95">
+            <button className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 md:px-10 py-4 md:py-5 rounded-xl md:rounded-2xl font-bold text-base md:text-lg hover:bg-white hover:text-primary transition-all duration-500 active:scale-95 text-center">
               Explore Our Fleet
             </button>
           </div>
