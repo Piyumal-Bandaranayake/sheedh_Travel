@@ -95,37 +95,28 @@ const TourPackages = () => {
         <div className="fixed inset-0 z-[2000] flex items-center justify-center p-4 md:p-10">
           <div className="absolute inset-0 bg-primary/40 backdrop-blur-2xl transition-all duration-500" onClick={closeModal}></div>
           
-          <div className="relative bg-white rounded-3xl md:rounded-[2.5rem] w-full max-w-6xl max-h-[90vh] overflow-hidden shadow-2xl flex flex-col md:flex-row animate-in fade-in zoom-in duration-300">
+          <div className="relative bg-white rounded-3xl md:rounded-[2.5rem] w-full max-w-4xl max-h-[90vh] overflow-hidden shadow-2xl flex flex-col animate-in fade-in zoom-in duration-300">
             {/* Close Button */}
             <button 
               onClick={closeModal} 
-              className="absolute top-4 right-4 md:top-6 md:right-6 p-3 md:p-4 bg-white/90 backdrop-blur-md rounded-xl md:rounded-2xl hover:bg-red-500 hover:text-white transition-all z-20 shadow-xl text-primary"
+              className="absolute top-4 right-4 md:top-6 md:right-6 p-3 md:p-4 bg-gray-100 rounded-xl md:rounded-2xl hover:bg-red-500 hover:text-white transition-all z-20 shadow-sm text-primary"
             >
               <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
 
-            {/* Modal Image Section */}
-            <div className="md:w-5/12 relative h-48 md:h-auto overflow-hidden">
-              <img 
-                src={selectedPackage.image} 
-                alt={selectedPackage.title} 
-                className="w-full h-full object-cover" 
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
-              <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 md:right-10">
-                 <div className="inline-block px-3 py-1 bg-secondary text-white rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest mb-2 md:mb-4">
+            {/* Modal Content Section */}
+            <div className="flex flex-col p-6 md:p-16 overflow-y-auto">
+              <div className="mb-8">
+                 <div className="inline-block px-3 py-1 bg-secondary/10 text-secondary rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest mb-4">
                     Top Rated Tour
                  </div>
-                 <h2 className="text-2xl md:text-4xl font-black text-white leading-tight drop-shadow-lg">
+                 <h2 className="text-3xl md:text-5xl font-black text-primary leading-tight">
                     {selectedPackage.title}
                  </h2>
               </div>
-            </div>
 
-            {/* Modal Content Section */}
-            <div className="md:w-7/12 flex flex-col p-6 md:p-16 overflow-y-auto">
               <div className="flex flex-wrap items-center gap-4 md:gap-6 mb-8 md:mb-12 pb-6 md:pb-8 border-b border-gray-100">
                 <div className="flex items-center gap-2">
                     <span className="text-secondary font-black text-2xl md:text-3xl">{selectedPackage.price}</span>

@@ -64,12 +64,9 @@ const AllVehiclesPage = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between">
-                    <span className="text-primary font-black text-lg md:text-xl">{vehicle.price}</span>
-                    <button className="bg-primary text-white p-3 md:p-4 rounded-xl hover:bg-secondary transition-all hover:scale-110 shadow-lg active:scale-95">
-                      <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
+                  <div className="mt-4">
+                    <button className="w-full bg-primary text-white py-3.5 rounded-xl font-bold hover:bg-secondary transition-all shadow-lg active:scale-95 text-sm uppercase tracking-wider">
+                      Book Now
                     </button>
                   </div>
                 </div>
