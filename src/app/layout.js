@@ -1,5 +1,6 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -15,7 +16,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${poppins.variable} h-full antialiased scroll-smooth`}>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col relative">
+        {children}
+        <WhatsAppButton />
+      </body>
     </html>
   );
 }

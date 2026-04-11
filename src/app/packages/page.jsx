@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { packages } from '../data/packages';
+'use client';
+import React, { useEffect, useState } from 'react';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+import { packages } from '../../data/packages';
 
-const TourPackages = () => {
+const AllPackagesPage = () => {
   const [selectedPackage, setSelectedPackage] = useState(null);
 
-  // Take only first 3 packages for the home page
-  const displayedPackages = packages.slice(0, 3);
+  // Ensure we start at the top of the page
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const openModal = (pkg) => {
     setSelectedPackage(pkg);
@@ -19,63 +23,67 @@ const TourPackages = () => {
   };
 
   return (
-    <section id="packages" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="section-title">Amazing Tour Packages</h2>
-          <p className="text-dark-gray max-w-2xl mx-auto">
-            Choose from our carefully curated travel packages designed to give you the best experience at the best price.
-          </p>
+    <main className="min-h-screen bg-gray-50">
+      <Navbar />
+      
+      {/* Header section with background */}
+      <section className="relative h-[40vh] flex items-center justify-center bg-primary">
+        <div className="absolute inset-0 overflow-hidden">
+          <img 
+            src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+            className="w-full h-full object-cover opacity-30"
+            alt="Travel background"
+          />
         </div>
+        <div className="relative text-center text-white px-4">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">All Tour Packages</h1>
+          <p className="text-xl opacity-90">Discover your next adventure with SAMEEDH</p>
+        </div>
+      </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {displayedPackages.map((pkg) => (
-            <div key={pkg.id} className="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col">
-              <div className="relative h-64 overflow-hidden">
-                <img 
-                  src={pkg.image} 
-                  alt={pkg.title} 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute top-4 right-4 bg-secondary text-white font-bold px-4 py-2 rounded-full shadow-lg">
-                  {pkg.price}
+      {/* Packages Grid */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {packages.map((pkg) => (
+              <div key={pkg.id} className="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col">
+                <div className="relative h-64 overflow-hidden">
+                  <img 
+                    src={pkg.image} 
+                    alt={pkg.title} 
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute top-4 right-4 bg-secondary text-white font-bold px-4 py-2 rounded-full shadow-lg">
+                    {pkg.price}
+                  </div>
+                </div>
+                
+                <div className="p-8 flex-1 flex flex-col">
+                  <div className="flex items-center gap-2 text-primary font-medium text-sm mb-3">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    {pkg.duration}
+                  </div>
+                  <h3 className="text-2xl font-bold text-primary mb-4">{pkg.title}</h3>
+                  <p className="text-dark-gray mb-6 flex-1">{pkg.desc}</p>
+                  <div className="flex flex-col gap-3">
+                    <button 
+                      onClick={() => openModal(pkg)}
+                      className="w-full py-3 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all duration-300"
+                    >
+                      View Details
+                    </button>
+                    <button className="w-full py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors duration-300">
+                      Contact for Booking
+                    </button>
+                  </div>
                 </div>
               </div>
-              
-              <div className="p-8 flex-1 flex flex-col">
-                <div className="flex items-center gap-2 text-primary font-medium text-sm mb-3">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  {pkg.duration}
-                </div>
-                <h3 className="text-2xl font-bold text-primary mb-4">{pkg.title}</h3>
-                <p className="text-dark-gray mb-6 flex-1">{pkg.desc}</p>
-                <div className="flex flex-col gap-3">
-                  <button 
-                    onClick={() => openModal(pkg)}
-                    className="w-full py-3 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all duration-300"
-                  >
-                    View Details
-                  </button>
-                  <button className="w-full py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors duration-300">
-                    Contact for Booking
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-
-        <div className="mt-16 text-center">
-          <Link 
-            href="/packages" 
-            className="inline-block bg-secondary text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-red-700 hover:scale-105 transform transition-all duration-300 shadow-xl"
-          >
-            Explore All Packages
-          </Link>
-        </div>
-      </div>
+      </section>
 
       {/* Modal Tooltip / Popup */}
       {selectedPackage && (
@@ -157,8 +165,10 @@ const TourPackages = () => {
           </div>
         </div>
       )}
-    </section>
+
+      <Footer />
+    </main>
   );
 };
 
-export default TourPackages;
+export default AllPackagesPage;

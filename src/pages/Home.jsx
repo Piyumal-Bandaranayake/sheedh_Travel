@@ -4,6 +4,7 @@ import Hero from '../components/Hero';
 import About from '../components/About';
 import Destinations from '../components/Destinations';
 import TourPackages from '../components/TourPackages';
+import Vehicles from '../components/Vehicles';
 import WhyChooseUs from '../components/WhyChooseUs';
 import Gallery from '../components/Gallery';
 import Contact from '../components/Contact';
@@ -15,8 +16,9 @@ const Home = () => {
       <Navbar />
       <Hero />
       <About />
-      <Destinations />
+      {/* <Destinations /> */}
       <TourPackages />
+      <Vehicles />
       <WhyChooseUs />
       <Gallery />
       <Contact />
