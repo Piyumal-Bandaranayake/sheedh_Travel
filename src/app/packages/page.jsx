@@ -36,8 +36,8 @@ const AllPackagesPage = () => {
           />
         </div>
         <div className="relative text-center text-white px-4">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">All Tour Packages</h1>
-          <p className="text-xl opacity-90">Discover your next adventure with SAMEEDH</p>
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">Sri Lanka Tour Packages</h1>
+          <p className="text-xl opacity-90">Discover the wonder of the island with Sheedh Tours</p>
         </div>
       </section>
 

@@ -7,9 +7,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div>
-            <h2 className="text-2xl font-bold mb-6 italic tracking-tighter">SAMEEDH</h2>
+            <h2 className="text-2xl font-bold mb-6 italic tracking-tighter">Sheedh</h2>
             <p className="text-white/70 mb-8 leading-relaxed">
-              Making your travel dreams come true since 2014. We are dedicated to providing the best travel experiences across the globe.
+              Making your travel dreams come true since 2014. We are a premier local travel agency dedicated to showcasing the authentic beauty of Sri Lanka.
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-secondary transition-colors duration-300">
@@ -56,7 +56,7 @@ const Footer = () => {
                 <svg className="w-5 h-5 text-secondary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 </svg>
-                123 Travel Street, Adventure City
+                456 Galle Road, <br/>Colombo, Sri Lanka
               </li>
               <li className="flex gap-3">
                 <svg className="w-5 h-5 text-secondary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -68,14 +68,14 @@ const Footer = () => {
                 <svg className="w-5 h-5 text-secondary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                info@sameedh.com
+                info@sheedhtours.com
               </li>
             </ul>
           </div>
         </div>
         
         <div className="border-t border-white/10 pt-10 text-center text-white/50 text-sm">
-          <p>© {new Date().getFullYear()} SAMEEDH Tours & Travels. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Sheedh Tours & Travels. All rights reserved.</p>
         </div>
       </div>
     </footer>

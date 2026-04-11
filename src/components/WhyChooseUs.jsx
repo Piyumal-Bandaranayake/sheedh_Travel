@@ -53,7 +53,7 @@ const WhyChooseUs = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Why Choose SAMEEDH?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Why Choose Sheedh?</h2>
           <div className="w-20 h-1 bg-secondary mx-auto"></div>
         </div>
 

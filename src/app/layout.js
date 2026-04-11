@@ -9,8 +9,8 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "SAMEEDH Tours & Travels | Explore the World",
-  description: "Official website of SAMEEDH Tours & Travels. Discover breathtaking destinations and personalized travel packages.",
+  title: "Sheedh Tours & Travels | Explore Sri Lanka",
+  description: "Official website of Sheedh Tours & Travels. Discover the beauty of Sri Lanka with our personalized travel packages and vehicle rentals.",
 };
 
 export default function RootLayout({ children }) {
