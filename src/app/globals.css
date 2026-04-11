@@ -41,3 +41,39 @@ h1, h2, h3, h4, h5, h6 {
   content: '';
   @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-20 h-1 bg-secondary rounded-full;
 }
+
+/* Preloader Animations */
+@keyframes glow {
+  0%, 100% { transform: scale(1); opacity: 0.2; }
+  50% { transform: scale(1.3); opacity: 0.4; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes vehicle-track {
+  0% { transform: translateX(-150%); }
+  100% { transform: translateX(150%); }
+}
+
+@keyframes trail-1 {
+  0%, 100% { width: 40px; opacity: 0.8; }
+  50% { width: 60px; opacity: 0.4; }
+}
+
+@keyframes road-dashes {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-glow { animation: glow 4s ease-in-out infinite; }
+.animate-float { animation: float 5s ease-in-out infinite; }
+.animate-vehicle-track { animation: vehicle-track 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+.animate-trail-1 { animation: trail-1 0.8s ease-in-out infinite; }
+.animate-road-dashes { 
+  animation: road-dashes 1.2s linear infinite;
+  width: 200%;
+}
+.animate-pulse-slow { animation: pulse 6s ease-in-out infinite; }
