@@ -1,26 +1,43 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FFFFFF;
+  --foreground: #333333;
+  --primary: #0B1B3F;
+  --secondary: #E53935;
+  --light-gray: #F5F7FA;
+  --dark-gray: #333333;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-light-gray: var(--light-gray);
+  --color-dark-gray: var(--dark-gray);
+  --font-brand: var(--font-poppins-custom);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins-custom), sans-serif;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.btn-primary {
+  @apply bg-secondary text-white px-6 py-3 rounded-md font-semibold transition-all duration-300 hover:bg-red-700 hover:shadow-lg active:scale-95;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-bold text-center mb-12 relative pb-4;
+}
+
+.section-title::after {
+  content: '';
+  @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-20 h-1 bg-secondary rounded-full;
 }
