@@ -15,6 +15,7 @@
   --color-light-gray: var(--light-gray);
   --color-dark-gray: var(--dark-gray);
   --font-brand: var(--font-poppins-custom);
+  --font-noto: var(--font-noto-sans);
 }
 
 body {
@@ -40,6 +41,29 @@ h1, h2, h3, h4, h5, h6 {
 .section-title::after {
   content: '';
   @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-20 h-1 bg-secondary rounded-full;
+}
+
+/* Hide Navbar when modal is open */
+body.modal-active nav {
+  top: -200px !important;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Text Glow Utilities */
+.text-glow {
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 0, 0, 0.3);
+}
+
+.text-glow-white {
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.text-glow-secondary {
+  text-shadow: 
+    0 0 10px rgba(229, 57, 51, 0.8),
+    0 0 20px rgba(229, 57, 51, 0.4),
+    0 0 40px rgba(229, 57, 51, 0.2);
 }
 
 /* Preloader Animations */

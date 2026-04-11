@@ -38,9 +38,9 @@ const Hero = () => {
       <div className="container mx-auto px-6 md:px-12 relative z-10 w-full pt-20">
         <div className="max-w-4xl text-left animate-in fade-in slide-in-from-left duration-1000">
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-8 drop-shadow-2xl text-white leading-[1.1]">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 text-white leading-[1.1] text-glow-white tracking-tight font-noto">
             Explore Sri Lanka <br/> 
-            <span className="text-secondary italic">Sheedh</span> Tours
+            <span className="text-secondary italic text-glow-secondary">Sheedh</span> Tours
           </h1>
           <p className="text-lg md:text-2xl mb-12 text-white/90 max-w-2xl drop-shadow-lg font-medium leading-relaxed">
             Experience the wonder of the pearl of the Indian Ocean with our premium local travel expertise and personalized packages.
