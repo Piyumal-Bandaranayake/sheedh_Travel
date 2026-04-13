@@ -29,8 +29,10 @@ const Hero = () => {
           }`}
           style={{ backgroundImage: `url('${slide}')` }}
         >
-          {/* Overlay - Gradient for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/40 to-transparent"></div>
+          {/* Overlay - Multi-layered gradient for depth and color richness */}
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/50 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-tr from-primary/40 via-secondary/10 to-indigo-900/20 mix-blend-overlay"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-primary/40"></div>
         </div>
       ))}
 

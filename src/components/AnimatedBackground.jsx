@@ -61,8 +61,13 @@ export function AnimatedBackground({
 
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2)
-        // More visible particles using Primary Blue and a hint of Red
-        ctx.fillStyle = `rgba(11, 27, 63, ${p.opacity})`
+        
+        // Multi-colored particles for richer visual depth
+        const colorType = Math.floor((p.x + p.y) % 3)
+        if (colorType === 0) ctx.fillStyle = `rgba(11, 27, 63, ${p.opacity})` // Primary
+        else if (colorType === 1) ctx.fillStyle = `rgba(229, 57, 53, ${p.opacity * 0.8})` // Secondary
+        else ctx.fillStyle = `rgba(0, 172, 193, ${p.opacity * 0.6})` // Cyan accent
+        
         ctx.fill()
       }
 
@@ -86,72 +91,90 @@ export function AnimatedBackground({
       ref={containerRef}
       className={`relative overflow-hidden ${className}`}
       style={{
-        background: "linear-gradient(180deg, #FFFFFF 0%, #F0F4F8 100%)",
+        background: "linear-gradient(135deg, #FFFFFF 0%, #F5F7FA 50%, #E8EDF2 100%)",
       }}
     >
-      {/* Brand-themed light layers - BOOSTED VISIBILITY */}
+      {/* Brand-themed light layers - MULTI-COLOR ENHANCED */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Layer 1: Primary Blue & Indigo */}
+        <div
+          className="absolute -inset-[30%] opacity-40"
+          style={{
+            background: `
+              radial-gradient(ellipse 50% 40% at 20% 20%, rgba(11, 27, 63, ${0.45 * intensity}), transparent 70%),
+              radial-gradient(ellipse 60% 40% at 50% 70%, rgba(57, 73, 171, ${0.35 * intensity}), transparent 70%)
+            `,
+            animation: `caustic1 ${duration1}s ease-in-out infinite`,
+            filter: "blur(80px)",
+          }}
+        />
+        
+        {/* Layer 2: Secondary Red & Amber/Gold */}
+        <div
+          className="absolute -inset-[30%] opacity-35"
+          style={{
+            background: `
+              radial-gradient(ellipse 45% 55% at 85% 35%, rgba(229, 57, 53, ${0.4 * intensity}), transparent 70%),
+              radial-gradient(ellipse 40% 40% at 15% 85%, rgba(255, 179, 0, ${0.25 * intensity}), transparent 70%)
+            `,
+            animation: `caustic2 ${duration2}s ease-in-out infinite`,
+            filter: "blur(100px)",
+          }}
+        />
+
+        {/* Layer 3: Cyan & Depth */}
         <div
           className="absolute -inset-[30%] opacity-30"
           style={{
             background: `
-              radial-gradient(ellipse 50% 40% at 20% 20%, rgba(11, 27, 63, ${0.4 * intensity}), transparent 70%),
-              radial-gradient(ellipse 40% 50% at 80% 30%, rgba(229, 57, 53, ${0.3 * intensity}), transparent 70%),
-              radial-gradient(ellipse 60% 40% at 50% 70%, rgba(11, 27, 63, ${0.35 * intensity}), transparent 70%)
+              radial-gradient(ellipse 55% 45% at 75% 85%, rgba(0, 172, 193, ${0.3 * intensity}), transparent 70%),
+              radial-gradient(ellipse 40% 40% at 45% 45%, rgba(11, 27, 63, ${0.25 * intensity}), transparent 70%)
             `,
-            animation: `caustic1 ${duration1}s ease-in-out infinite`,
-            filter: "blur(70px)",
+            animation: `caustic3 ${duration3}s ease-in-out infinite`,
+            filter: "blur(110px)",
           }}
         />
-        <div
-          className="absolute -inset-[30%] opacity-25"
-          style={{
-            background: `
-              radial-gradient(ellipse 60% 50% at 75% 75%, rgba(229, 57, 53, ${0.4 * intensity}), transparent 70%),
-              radial-gradient(ellipse 50% 60% at 25% 80%, rgba(11, 27, 63, ${0.3 * intensity}), transparent 70%)
-            `,
-            animation: `caustic2 ${duration2}s ease-in-out infinite`,
-            filter: "blur(90px)",
-          }}
-        />
-        {/* Third layer for extra color depth */}
+
+        {/* Extra Accent Layer: Dynamic Highlights */}
         <div
           className="absolute -inset-[30%] opacity-20"
           style={{
             background: `
-              radial-gradient(ellipse 40% 40% at 50% 50%, rgba(229, 57, 53, ${0.2 * intensity}), transparent 70%),
-              radial-gradient(ellipse 35% 35% at 10% 90%, rgba(11, 27, 63, ${0.3 * intensity}), transparent 70%)
+              radial-gradient(circle at 30% 50%, rgba(255, 255, 255, ${0.4 * intensity}), transparent 40%),
+              radial-gradient(circle at 70% 50%, rgba(229, 57, 53, ${0.15 * intensity}), transparent 40%)
             `,
-            animation: `caustic3 ${duration3}s ease-in-out infinite`,
-            filter: "blur(100px)",
+            animation: `caustic1 ${duration2 * 1.5}s ease-in-out infinite reverse`,
+            filter: "blur(60px)",
           }}
         />
       </div>
 
-      {/* Light rays - Custom Primary/Secondary tints - BOOSTED VISIBILITY */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-60">
-        {[0, 1, 2, 3].map(i => (
+      {/* Light rays - Multi-tinted Dynamic Rays */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-70">
+        {[0, 1, 2, 3, 4].map(i => (
           <div
             key={i}
             className="absolute top-0"
             style={{
-              left: `${15 + i * 28}%`,
-              width: "15%",
-              height: "100%",
-              background: i % 2 === 0 
-                ? `linear-gradient(180deg, rgba(11, 27, 63, ${0.12 * intensity}) 0%, transparent 90%)`
-                : `linear-gradient(180deg, rgba(229, 57, 53, ${0.08 * intensity}) 0%, transparent 90%)`,
-              transform: "skewX(-15deg)",
-              animation: `ray ${7 + i * 2.5}s ease-in-out infinite`,
-              animationDelay: `${i * -1.8}s`,
-              filter: "blur(20px)",
+              left: `${10 + i * 22}%`,
+              width: "12%",
+              height: "140%", // Taller rays for better coverage
+              background: i % 3 === 0 
+                ? `linear-gradient(180deg, rgba(11, 27, 63, ${0.15 * intensity}) 0%, transparent 80%)`
+                : i % 3 === 1
+                  ? `linear-gradient(180deg, rgba(229, 57, 53, ${0.1 * intensity}) 0%, transparent 80%)`
+                  : `linear-gradient(180deg, rgba(0, 172, 193, ${0.08 * intensity}) 0%, transparent 80%)`,
+              transform: "skewX(-20deg)",
+              animation: `ray ${8 + i * 3}s ease-in-out infinite`,
+              animationDelay: `${i * -2.2}s`,
+              filter: "blur(30px)",
             }}
           />
         ))}
       </div>
 
       {/* Particles canvas */}
-      <canvas ref={canvasRef} className="absolute inset-0 h-full w-full pointer-events-none opacity-50" />
+      <canvas ref={canvasRef} className="absolute inset-0 h-full w-full pointer-events-none opacity-60" />
 
       {/* Content wrapper */}
       <div className="relative z-10 w-full h-full">
@@ -160,23 +183,24 @@ export function AnimatedBackground({
 
       <style jsx>{`
         @keyframes caustic1 {
-          0%, 100% { transform: translate(0%, 0%) scale(1); }
-          33% { transform: translate(5%, 4%) scale(1.05); }
-          66% { transform: translate(-4%, -2%) scale(0.95); }
+          0%, 100% { transform: translate(0%, 0%) rotate(0deg) scale(1); }
+          33% { transform: translate(4%, 3%) rotate(2deg) scale(1.08); }
+          66% { transform: translate(-3%, -2%) rotate(-1deg) scale(0.96); }
         }
         @keyframes caustic2 {
-          0%, 100% { transform: translate(0%, 0%) scale(1); }
-          50% { transform: translate(-7%, 5%) scale(1.1); }
+          0%, 100% { transform: translate(0%, 0%) rotate(0deg) scale(1); }
+          50% { transform: translate(-6%, 4%) rotate(-3deg) scale(1.15); }
         }
         @keyframes caustic3 {
-          0%, 100% { transform: translate(0%, 0%) scale(1); }
-          50% { transform: translate(6%, -4%) scale(1.08); }
+          0%, 100% { transform: translate(0%, 0%) rotate(0deg) scale(1); }
+          50% { transform: translate(5%, -5%) rotate(4deg) scale(1.12); }
         }
         @keyframes ray {
-          0%, 100% { opacity: 0.5; transform: skewX(-15deg) translateX(0); }
-          50% { opacity: 1; transform: skewX(-20deg) translateX(25px); }
+          0%, 100% { opacity: 0.4; transform: skewX(-20deg) translateX(0) scaleY(1); }
+          50% { opacity: 0.9; transform: skewX(-25deg) translateX(40px) scaleY(1.1); }
         }
       `}</style>
     </div>
+
   )
 }

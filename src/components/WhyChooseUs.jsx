@@ -46,10 +46,11 @@ const features = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-16 md:py-20 bg-primary text-white overflow-hidden relative">
-      {/* Decorative background elements */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/10 rounded-full -mr-32 -mt-32"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full -ml-48 -mb-48"></div>
+    <section className="py-16 md:py-20 text-white overflow-hidden relative" style={{ background: 'linear-gradient(135deg, #0B1B3F 0%, #1A237E 100%)' }}>
+      {/* Decorative multi-color background elements */}
+      <div className="absolute top-0 right-0 w-80 h-80 bg-secondary/15 rounded-full -mr-32 -mt-32 blur-[60px] animate-pulse-slow"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500/10 rounded-full -ml-48 -mb-48 blur-[80px]"></div>
+      <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-amber-500/5 rounded-full blur-[100px] pointer-events-none"></div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-12 md:mb-16">

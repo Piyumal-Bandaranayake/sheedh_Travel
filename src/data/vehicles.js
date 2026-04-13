@@ -1,56 +1,65 @@
 export const vehicles = [
   {
     id: 1,
-    name: 'Luxury Executive Sedan',
-    type: 'Sedan',
-    passengers: 4,
-    bags: 2,
-    image: 'https://images.unsplash.com/photo-1555215695-3004980ad94e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    price: 'Starting from $50/day'
+    name: 'Wagon / Small',
+    type: 'Wagon',
+    passengers: 2,
+    facts: '1-2',
+    image: '/images/vehicles/1.jpg',
+    desc: 'Perfect for solo travelers or couples looking for a budget-friendly city ride.'
   },
   {
     id: 2,
-    name: 'Premium SUV 4x4',
-    type: 'SUV',
-    passengers: 7,
-    bags: 4,
-    image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    price: 'Starting from $85/day'
+    name: 'Sedan',
+    type: 'Sedan',
+    passengers: 3,
+    facts: '1-3',
+    image: '/images/vehicles/2.jpg',
+    desc: 'Comfortable and stylish, ideal for small families or business travel.'
   },
   {
     id: 3,
-    name: 'Luxury Travel Van',
+    name: 'Van',
     type: 'Van',
-    passengers: 12,
-    bags: 8,
-    image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    price: 'Starting from $120/day'
+    passengers: 5,
+    facts: '5',
+    image: '/images/vehicles/3.jpg',
+    desc: 'Standard travel van for mid-sized groups exploring the island.'
   },
   {
     id: 4,
-    name: 'Standard Micro Car',
-    type: 'Micro',
-    passengers: 3,
-    bags: 1,
-    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    price: 'Starting from $35/day'
+    name: 'KDH Flat Roof',
+    type: 'Van',
+    passengers: 6,
+    facts: '6',
+    image: '/images/vehicles/4.jpg',
+    desc: 'Spacious KDH van with flat roof, great for long distance tours.'
   },
   {
     id: 5,
-    name: 'Luxury Sports Convertible',
-    type: 'Luxury',
-    passengers: 2,
-    bags: 1,
-    image: 'https://images.unsplash.com/photo-1525609004556-c46c7d6cf048?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    price: 'Starting from $200/day'
+    name: 'KDH High Roof',
+    type: 'Van',
+    passengers: 8,
+    facts: '8',
+    image: '/images/vehicles/5.jpg',
+    desc: 'Maximum comfort KDH with high roof, extra headroom and luggage space.'
   },
   {
     id: 6,
-    name: 'Off-Road Monster Pickup',
-    type: 'Pickup',
-    passengers: 5,
-    bags: 6,
-    image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    price: 'Starting from $110/day'
+    name: 'Mini Coach',
+    type: 'Coach',
+    passengers: 15,
+    facts: '15',
+    image: '/images/vehicles/6.jpg',
+    desc: 'Designed for larger group tours, school trips or corporate events.'
+  },
+  {
+    id: 7,
+    name: 'AC Bus',
+    type: 'Bus',
+    passengers: 20,
+    facts: '18+',
+    image: '/images/vehicles/7.jpg',
+    desc: 'Full-sized luxury air-conditioned bus for the ultimate group journey.'
   }
 ];
