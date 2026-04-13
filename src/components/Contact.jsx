@@ -2,7 +2,11 @@ import React from 'react';
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-16 md:py-20 bg-light-gray">
+    <section id="contact" className="py-16 md:py-20 bg-light-gray relative overflow-hidden">
+      {/* Subtle colorful background blobs for depth */}
+      <div className="absolute -top-24 -left-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-1/2 -right-32 w-80 h-80 bg-secondary/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute -bottom-24 left-1/2 w-72 h-72 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none"></div>
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-5xl font-black text-primary mb-6">Get In Touch</h2>
@@ -21,7 +25,7 @@ const Contact = () => {
               </svg>
             </div>
             <h4 className="text-xl font-black text-primary mb-2">Phone</h4>
-            <p className="text-dark-gray font-bold text-sm md:text-base">+1 (234) 567-890</p>
+            <a href="tel:+94719669093" className="text-dark-gray font-bold text-sm md:text-base hover:text-secondary transition-colors">+94 71 966 9093</a>
             <p className="text-secondary font-bold text-xs mt-2 uppercase tracking-widest">Mon-Fri 9am to 6pm</p>
           </div>
 
