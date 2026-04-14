@@ -8,18 +8,17 @@ import { packages } from '../../../data/packages';
 const PackageDetailsPage = () => {
   const { id } = useParams();
   const router = useRouter();
-  const [pkg, setPkg] = useState(null);
+  
+  const pkg = React.useMemo(() => {
+    if (!id) return null;
+    return packages.find(p => p.id === parseInt(id));
+  }, [id]);
 
   useEffect(() => {
-    if (id) {
-      const foundPkg = packages.find(p => p.id === parseInt(id));
-      if (foundPkg) {
-        setPkg(foundPkg);
-      } else {
-        router.push('/packages');
-      }
+    if (id && !pkg) {
+      router.push('/packages');
     }
-  }, [id, router]);
+  }, [id, pkg, router]);
 
   if (!pkg) return null;
 

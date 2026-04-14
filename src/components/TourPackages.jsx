@@ -9,22 +9,25 @@ const TourPackages = () => {
   const displayedPackages = packages.slice(0, 3);
 
   React.useEffect(() => {
+    if (selectedPackage) {
+      document.body.style.overflow = 'hidden';
+      document.body.classList.add('modal-active');
+    } else {
+      document.body.style.overflow = 'auto';
+      document.body.classList.remove('modal-active');
+    }
     return () => {
       document.body.style.overflow = 'auto';
       document.body.classList.remove('modal-active');
     };
-  }, []);
+  }, [selectedPackage]);
 
   const openModal = (pkg) => {
     setSelectedPackage(pkg);
-    document.body.style.overflow = 'hidden';
-    document.body.classList.add('modal-active');
   };
 
   const closeModal = () => {
     setSelectedPackage(null);
-    document.body.style.overflow = 'auto';
-    document.body.classList.remove('modal-active');
   };
 
   return (

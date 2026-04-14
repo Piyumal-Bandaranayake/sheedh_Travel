@@ -30,7 +30,7 @@ const About = () => {
               Crafting Unforgettable <br className="hidden md:block" /> <span className="bg-highlight text-secondary italic">Sri Lankan</span> Journeys
             </h2>
             <p className="text-lg text-dark-gray mb-8 leading-relaxed font-medium">
-              At <span className="text-primary font-bold">Sheedh Tours & Travels</span>, we believe that travel is more than just visiting a place—it's about experiencing the authentic soul of Sri Lanka. As a local travel agency, we have the insider knowledge to take you beyond the typical tourist paths.
+              At <span className="text-primary font-bold">Sheedh Tours & Travels</span>, we believe that travel is more than just visiting a place—it&apos;s about experiencing the authentic soul of Sri Lanka. As a local travel agency, we have the insider knowledge to take you beyond the typical tourist paths.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">

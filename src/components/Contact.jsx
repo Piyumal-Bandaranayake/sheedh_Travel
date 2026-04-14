@@ -15,7 +15,7 @@ const Contact = () => {
             Get In <span className="text-secondary italic">Touch</span>
           </h2>
           <p className="text-lg md:text-xl text-white/80 leading-relaxed font-medium mx-auto max-w-2xl text-center">
-            Have questions about our tours or need a custom travel plan? We're here to help you plan your dream vacation. 
+            Have questions about our tours or need a custom travel plan? We&apos;re here to help you plan your dream vacation. 
           </p>
         </div>
         

@@ -18,11 +18,15 @@ const Preloader = () => {
 
   useEffect(() => {
     if (!isInitialLoad) {
-      setIsLoading(true);
-      const timer = setTimeout(() => {
+      // Small timeout to avoid immediate synchronous setState during effect
+      const startTimer = setTimeout(() => setIsLoading(true), 0);
+      const endTimer = setTimeout(() => {
         setIsLoading(false);
       }, 2500); // Increased duration to show the slower animation
-      return () => clearTimeout(timer);
+      return () => {
+        clearTimeout(startTimer);
+        clearTimeout(endTimer);
+      };
     }
   }, [pathname, searchParams, isInitialLoad]);
 

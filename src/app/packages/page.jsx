@@ -14,16 +14,27 @@ const AllPackagesPage = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    if (selectedPackage) {
+      document.body.style.overflow = 'hidden';
+      document.body.classList.add('modal-active');
+    } else {
+      document.body.style.overflow = 'auto';
+      document.body.classList.remove('modal-active');
+    }
+    // Cleanup if component unmounts while modal is open
+    return () => {
+      document.body.style.overflow = 'auto';
+      document.body.classList.remove('modal-active');
+    };
+  }, [selectedPackage]);
+
   const openModal = (pkg) => {
     setSelectedPackage(pkg);
-    document.body.style.overflow = 'hidden';
-    document.body.classList.add('modal-active');
   };
 
   const closeModal = () => {
     setSelectedPackage(null);
-    document.body.style.overflow = 'auto';
-    document.body.classList.remove('modal-active');
   };
 
   return (
