@@ -20,12 +20,16 @@ const AllVehiclesPage = () => {
       <section className="relative h-[45vh] md:h-[55vh] flex items-center justify-center bg-primary overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <img 
-            src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+            src="/images/header-bg.png" 
             className="w-full h-full object-cover"
             alt="Vehicles background"
           />
+          {/* Animated Glow Blobs */}
+          <div className="absolute top-1/4 -left-20 w-[400px] h-[400px] bg-secondary/20 rounded-full blur-[120px] animate-pulse-slow"></div>
+          <div className="absolute -bottom-20 -right-20 w-[500px] h-[500px] bg-primary/40 rounded-full blur-[150px] animate-pulse"></div>
+          
           {/* Enhanced Overlay to match Hero design */}
-          <div className="absolute inset-0 bg-primary/80"></div>
+          <div className="absolute inset-0 bg-primary/70 md:bg-primary/60"></div>
           <div className="absolute inset-0 bg-gradient-to-tr from-primary/60 via-secondary/15 to-indigo-900/25 mix-blend-overlay"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-primary/60"></div>
         </div>
@@ -35,7 +39,7 @@ const AllVehiclesPage = () => {
         </div>
       </section>
 
-      <AnimatedBackground>
+      <AnimatedBackground intensity={2.0}>
         {/* Vehicles Grid */}
         <section className="py-12 md:py-24">
         <div className="container mx-auto px-6">

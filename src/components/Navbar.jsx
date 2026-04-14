@@ -22,11 +22,12 @@ const Navbar = () => {
     }`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex items-center relative group">
+          <div className="absolute inset-0 bg-secondary/15 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
           <img 
             src="/logo.png" 
             alt="Sheedh Tours Logo" 
-            className={`transition-all duration-500 w-auto ${isScrolled ? 'h-12' : 'h-20 md:h-24'}`}
+            className={`transition-all duration-500 w-auto relative z-10 ${isScrolled ? 'h-12' : 'h-20 md:h-24'}`}
           />
         </Link>
 
