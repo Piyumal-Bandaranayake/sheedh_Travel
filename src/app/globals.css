@@ -26,8 +26,12 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--primary);
+  color: inherit;
   font-weight: 700;
+}
+
+.text-primary {
+  color: var(--primary);
 }
 
 .btn-primary {
@@ -64,6 +68,23 @@ body.modal-active nav {
     0 0 10px rgba(229, 57, 51, 0.8),
     0 0 20px rgba(229, 57, 51, 0.4),
     0 0 40px rgba(229, 57, 51, 0.2);
+}
+
+.bg-highlight {
+  @apply relative inline-block px-1;
+}
+
+.bg-highlight::before {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-[40%] bg-secondary/30 -z-10 rounded-sm;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/70;
+}
+
+.text-gradient-secondary {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-secondary to-red-400;
 }
 
 /* Preloader Animations */

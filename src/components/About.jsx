@@ -9,9 +9,9 @@ const About = () => {
           <div className="w-full md:w-1/2">
             <div className="relative">
               <div className="absolute inset-0 bg-primary/5 rounded-3xl -rotate-3 scale-105"></div>
-              <img 
-                src="https://images.unsplash.com/photo-1546708973-b339540b5162?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                alt="About Sheedh Tours" 
+              <img
+                src="/images/loggg.jpeg"
+                alt="About Sheedh Tours"
                 className="relative rounded-2xl shadow-2xl w-full h-[350px] md:h-[500px] object-cover border-4 border-white"
               />
               <div className="absolute -bottom-6 -right-4 md:-bottom-10 md:-right-6 bg-secondary text-white p-5 md:p-8 rounded-2xl md:rounded-[2rem] shadow-2xl transform hover:scale-105 transition-transform duration-300">
@@ -27,12 +27,12 @@ const About = () => {
               About Our Agency
             </div>
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-primary mb-6 md:mb-8 leading-[1.2] md:leading-[1.1]">
-              Crafting Unforgettable <br className="hidden md:block"/> <span className="text-secondary italic">Sri Lankan</span> Journeys
+              Crafting Unforgettable <br className="hidden md:block" /> <span className="bg-highlight text-secondary italic">Sri Lankan</span> Journeys
             </h2>
             <p className="text-lg text-dark-gray mb-8 leading-relaxed font-medium">
-              At <span className="text-primary font-bold">Sheedh Tours & Travels</span>, we believe that travel is more than just visiting a place—it's about experiencing the authentic soul of Sri Lanka. As a local travel agency, we have the insider knowledge to take you beyond the typical tourist paths.
+              At <span className="text-primary font-bold">Sheedh Tours & Travels</span>, we believe that travel is more than just visiting a place—it&apos;s about experiencing the authentic soul of Sri Lanka. As a local travel agency, we have the insider knowledge to take you beyond the typical tourist paths.
             </p>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
               <div className="group bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
                 <h4 className="font-bold text-primary mb-3 flex items-center gap-2">
