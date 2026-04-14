@@ -36,14 +36,22 @@ const Vehicles = () => {
               <div className="p-6 md:p-7 flex-1 flex flex-col">
                 <h3 className="text-xl md:text-2xl font-black text-primary mb-4 group-hover:text-secondary transition-colors leading-tight">{vehicle.name}</h3>
                 
-                <div className="flex items-center gap-2 mb-6 text-dark-gray/80 font-bold border-b border-gray-100 pb-6">
+                <div className="flex items-center gap-6 mb-6 text-dark-gray/80 font-bold border-b border-gray-100 pb-6">
                   <div className="flex items-center gap-2">
                     <div className="p-1.5 bg-secondary/10 rounded-lg">
                         <svg className="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                         </svg>
                     </div>
-                    <span className="text-xs uppercase tracking-tight">Seats: {vehicle.facts}</span>
+                    <span className="text-xs uppercase tracking-tight">{vehicle.passengers} Seats</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="p-1.5 bg-secondary/10 rounded-lg">
+                        <svg className="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
+                        </svg>
+                    </div>
+                    <span className="text-xs uppercase tracking-tight">{vehicle.bags} Bags</span>
                   </div>
                 </div>
 

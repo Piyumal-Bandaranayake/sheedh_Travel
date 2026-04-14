@@ -31,7 +31,7 @@ const AllPackagesPage = () => {
       <Navbar />
       
       {/* Header section with background */}
-      <section className="relative h-[30vh] md:h-[40vh] flex items-center justify-center bg-primary overflow-hidden">
+      <section className="relative h-[45vh] md:h-[55vh] flex items-center justify-center bg-primary overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <img 
             src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
@@ -43,7 +43,7 @@ const AllPackagesPage = () => {
           <div className="absolute inset-0 bg-gradient-to-tr from-primary/60 via-secondary/15 to-indigo-900/25 mix-blend-overlay"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-primary/60"></div>
         </div>
-        <div className="relative text-center text-white px-6 z-10">
+        <div className="relative text-center text-white px-6 z-10 pt-32 md:pt-40">
           <h1 className="text-4xl md:text-7xl font-black mb-4 tracking-tight text-glow-white">Sri Lanka Tour Packages</h1>
           <p className="text-lg md:text-2xl opacity-90 max-w-2xl mx-auto font-medium">Discover the wonder of the island with Sheedh Tours</p>
         </div>

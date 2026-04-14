@@ -57,7 +57,9 @@ const WhyChooseUs = () => {
            <div className="inline-block px-4 py-1 bg-secondary/20 rounded-full text-secondary font-bold text-xs mb-4 uppercase tracking-widest">
             The Difference
           </div>
-          <h2 className="text-3xl md:text-5xl font-black text-white mb-6">Why Choose Sheedh?</h2>
+          <h2 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">
+            Why Choose <span className="bg-highlight text-gradient">Sheedh?</span>
+          </h2>
           <div className="w-20 h-1.5 bg-secondary mx-auto rounded-full"></div>
         </div>
 

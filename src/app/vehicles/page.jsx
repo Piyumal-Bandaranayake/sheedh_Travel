@@ -17,7 +17,7 @@ const AllVehiclesPage = () => {
       <Navbar />
       
       {/* Header section with background */}
-      <section className="relative h-[30vh] md:h-[40vh] flex items-center justify-center bg-primary overflow-hidden">
+      <section className="relative h-[45vh] md:h-[55vh] flex items-center justify-center bg-primary overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <img 
             src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
@@ -29,7 +29,7 @@ const AllVehiclesPage = () => {
           <div className="absolute inset-0 bg-gradient-to-tr from-primary/60 via-secondary/15 to-indigo-900/25 mix-blend-overlay"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-primary/60"></div>
         </div>
-        <div className="relative text-center text-white px-6 z-10">
+        <div className="relative text-center text-white px-6 z-10 pt-32 md:pt-40">
           <h1 className="text-4xl md:text-7xl font-black mb-4 tracking-tight text-glow-white">Our Premium Fleet</h1>
           <p className="text-lg md:text-2xl opacity-90 max-w-2xl mx-auto font-medium">Comfortable and reliable transport for your journey</p>
         </div>
@@ -56,12 +56,22 @@ const AllVehiclesPage = () => {
                 <div className="p-6 md:p-8">
                   <h3 className="text-xl md:text-2xl font-bold text-primary mb-4 group-hover:text-secondary transition-colors">{vehicle.name}</h3>
                   
-                  <div className="flex items-center gap-2 mb-6 text-dark-gray border-b border-gray-100 pb-6">
+                  <div className="flex items-center gap-6 mb-6 text-dark-gray/80 font-bold border-b border-gray-100 pb-6">
                     <div className="flex items-center gap-2">
-                       <svg className="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <span className="font-bold text-xs md:text-sm uppercase tracking-tight">Seats: {vehicle.facts}</span>
+                      <div className="p-1.5 bg-secondary/10 rounded-lg">
+                        <svg className="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                      </div>
+                      <span className="text-xs uppercase tracking-tight">{vehicle.passengers} Seats</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                       <div className="p-1.5 bg-secondary/10 rounded-lg">
+                        <svg className="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
+                        </svg>
+                      </div>
+                      <span className="text-xs uppercase tracking-tight">{vehicle.bags} Bags</span>
                     </div>
                   </div>
 
