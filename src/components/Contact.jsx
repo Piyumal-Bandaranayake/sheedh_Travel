@@ -4,9 +4,9 @@ const Contact = () => {
   return (
     <section 
       id="contact" 
-      className="py-24 md:py-36 relative overflow-hidden bg-primary text-white bg-fixed bg-cover bg-center"
+      className="py-24 md:py-36 relative overflow-hidden text-white bg-fixed bg-cover bg-center"
       style={{ 
-        backgroundImage: "linear-gradient(rgba(11, 27, 63, 0.7), rgba(11, 27, 63, 0.85)), url('/images/kandy.png')" 
+        backgroundImage: "linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.45)), url('/images/kandy.png')" 
       }}
     >
       <div className="container mx-auto px-6 relative z-10">
