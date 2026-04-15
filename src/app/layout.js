@@ -19,6 +19,11 @@ const notoLabels = Noto_Sans({
 export const metadata = {
   title: "Sheedh Tours & Travels | Explore Sri Lanka",
   description: "Official website of Sheedh Tours & Travels. Discover the beauty of Sri Lanka with our personalized travel packages and vehicle rentals.",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({ children }) {

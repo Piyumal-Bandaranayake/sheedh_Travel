@@ -23,11 +23,13 @@ const Navbar = () => {
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center relative group">
+          {/* Persistent white glow so logo is always visible against dark/transitioning backgrounds */}
+          <div className="absolute inset-0 bg-white/30 blur-2xl rounded-full"></div>
           <div className="absolute inset-0 bg-secondary/15 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
           <img 
             src="/logo.png" 
             alt="Sheedh Tours Logo" 
-            className={`transition-all duration-500 w-auto relative z-10 ${isScrolled ? 'h-12' : 'h-20 md:h-24'}`}
+            className={`transition-all duration-500 w-auto relative z-10 drop-shadow-[0_0_12px_rgba(255,255,255,0.8)] ${isScrolled ? 'h-12' : 'h-20 md:h-24'}`}
           />
         </Link>
 
